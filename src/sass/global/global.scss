@@ -1,0 +1,48 @@
+@import './typography.scss';
+
+body {
+  background-color: $volleyWhite;
+}
+
+main {
+  min-height: 100vh;
+}
+
+/* 
+*
+*
+* // Utility Classes
+*
+*
+*/
+
+.grid__wrapper {
+  display: grid;
+  // default layout
+  grid-template-columns: 1fr 1fr;
+}
+
+.flex__wrapper {
+  display: flex;
+}
+
+.row-rev {
+  flex-direction: row-reverse;
+}
+
+// Images / Lazy Loading
+
+img.lazy {
+  filter: blur(1px);
+}
+
+// Accordion
+
+.accordion__button {
+}
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 450ms ease-in-out, margin 450ms ease-in-out;
+}

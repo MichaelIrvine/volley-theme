@@ -1,0 +1,23 @@
+#aboutHero {
+  padding: 0 20px;
+
+  .content__wrapper {
+    img {
+      object-fit: cover;
+      min-width: 100%;
+    }
+  }
+}
+
+#aboutContactDetails {
+  border-bottom: 1px solid $black;
+  padding-bottom: 20px;
+  > .grid__wrapper:first-of-type {
+    padding: 20px;
+    gap: 60px;
+  }
+  > .grid__wrapper:last-of-type {
+    padding: 20px;
+    gap: 60px;
+  }
+}

@@ -1,0 +1,44 @@
+body.page-our-services {
+  section {
+    padding: 20px;
+    border-bottom: 1px solid $black;
+    gap: 22px;
+
+    p {
+      font-size: 1rem;
+      line-height: 24px;
+    }
+
+    ul {
+      list-style: disc;
+      margin: 0;
+    }
+
+    > div {
+      width: 50%;
+    }
+
+    > div:first-of-type {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      // title row
+      > div:first-of-type {
+        margin-bottom: 160px;
+      }
+
+      .grid__wrapper {
+        gap: 11px;
+        grid-template-columns: 1.65fr 1fr;
+      }
+    }
+  }
+
+  section.single-image {
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
