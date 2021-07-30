@@ -24,6 +24,7 @@
     "build": "wp-scripts build --mode=production"
   },
   "dependencies": {
-    "browser-sync": "^2.26.12"
+    "browser-sync": "^2.26.12",
+    "gsap": "^3.7.1"
   }
 }

@@ -195,7 +195,7 @@ h2 {
 
 h3 {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-family: neue-haas-grotesk-text, sans-serif;
   line-height: 24px; }
@@ -338,7 +338,7 @@ img.lazy {
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity 960ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
     z-index: -1; }
   #companyInfo .hidden-image__wrapper img.show {
     opacity: 1; }
@@ -452,13 +452,174 @@ body.page-our-services section.single-image img {
 
 #aboutContactDetails {
   border-bottom: 1px solid #000000;
-  padding-bottom: 20px; }
+  padding-bottom: 90px; }
+  #aboutContactDetails p,
+  #aboutContactDetails a {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    line-height: 24px; }
   #aboutContactDetails > .grid__wrapper:first-of-type {
     padding: 20px;
     gap: 60px; }
   #aboutContactDetails > .grid__wrapper:last-of-type {
     padding: 20px;
     gap: 60px; }
+  #aboutContactDetails .form__wrapper {
+    padding-right: 60px; }
+    #aboutContactDetails .form__wrapper h3 {
+      margin-bottom: 1rem; }
+    #aboutContactDetails .form__wrapper form label {
+      font-size: 12.5px;
+      font-weight: 400;
+      font-style: normal;
+      font-family: neue-haas-grotesk-text, sans-serif;
+      line-height: 24px; }
+    #aboutContactDetails .form__wrapper form input,
+    #aboutContactDetails .form__wrapper form textarea,
+    #aboutContactDetails .form__wrapper form input[type='submit'] {
+      border: 0;
+      border-radius: 0;
+      width: 100%;
+      resize: none;
+      font-size: 12.5px;
+      font-weight: 400;
+      font-style: normal;
+      font-family: neue-haas-grotesk-text, sans-serif;
+      line-height: 24px;
+      transition: border-bottom-color 600ms ease;
+      border-bottom: 1px solid transparent;
+      appearance: none; }
+      #aboutContactDetails .form__wrapper form input:focus,
+      #aboutContactDetails .form__wrapper form textarea:focus,
+      #aboutContactDetails .form__wrapper form input[type='submit']:focus {
+        outline: none;
+        border-bottom-color: #505050; }
+    #aboutContactDetails .form__wrapper form input[type='submit'] {
+      color: #fff;
+      background-color: #505050;
+      height: 36px;
+      transition: background-color 600ms ease;
+      cursor: pointer; }
+      #aboutContactDetails .form__wrapper form input[type='submit']:hover, #aboutContactDetails .form__wrapper form input[type='submit']:focus {
+        background-color: #000000; }
+
+#aboutTeam {
+  border-bottom: 1px solid #000000;
+  padding: 30px 20px 56px 20px; }
+  #aboutTeam > .grid__wrapper {
+    gap: 60px; }
+    #aboutTeam > .grid__wrapper .team-members__wrapper ul {
+      margin: 0;
+      padding: 0;
+      padding-right: 90px; }
+    #aboutTeam > .grid__wrapper .team-members__wrapper li.flex__wrapper {
+      flex-direction: column; }
+      #aboutTeam > .grid__wrapper .team-members__wrapper li.flex__wrapper .grid__wrapper {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 20px; }
+        #aboutTeam > .grid__wrapper .team-members__wrapper li.flex__wrapper .grid__wrapper > div:last-of-type {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end; }
+      #aboutTeam > .grid__wrapper .team-members__wrapper li.flex__wrapper .grid__wrapper:first-of-type {
+        align-items: end;
+        margin-bottom: 30px; }
+      #aboutTeam > .grid__wrapper .team-members__wrapper li.flex__wrapper .bio-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 17px;
+        overflow: hidden; }
+        #aboutTeam > .grid__wrapper .team-members__wrapper li.flex__wrapper .bio-controls .bio-btn {
+          height: 17px; }
+      #aboutTeam > .grid__wrapper .team-members__wrapper li.flex__wrapper .button-arrow__wrapper {
+        height: 18px; }
+    #aboutTeam > .grid__wrapper .team-members__wrapper .team-bio {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 450ms ease; }
+
+#clientList {
+  border-bottom: 1px solid #000000;
+  padding: 30px 20px 90px 20px; }
+  #clientList > .grid__wrapper {
+    gap: 60px; }
+    #clientList > .grid__wrapper .flex__wrapper {
+      flex-direction: column;
+      padding-right: 90px; }
+      #clientList > .grid__wrapper .flex__wrapper > div:first-of-type {
+        margin-bottom: 30px; }
+      #clientList > .grid__wrapper .flex__wrapper ul {
+        margin: 0;
+        padding: 0; }
+        #clientList > .grid__wrapper .flex__wrapper ul li {
+          line-height: 21px; }
+        #clientList > .grid__wrapper .flex__wrapper ul .hidden-image__wrapper img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: opacity 400ms ease-in-out;
+          z-index: -1; }
+        #clientList > .grid__wrapper .flex__wrapper ul .hidden-image__wrapper img.show {
+          opacity: 1; }
+
+.post-type-archive-project_index main {
+  padding-top: 75px; }
+
+.index-filter__wrapper {
+  padding: 20px;
+  margin-bottom: 56px; }
+  .index-filter__wrapper ul {
+    padding: 0;
+    margin: 0; }
+  .index-filter__wrapper .grid__wrapper {
+    align-items: start;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 20px; }
+    .index-filter__wrapper .grid__wrapper > div:first-of-type {
+      grid-column: span 2; }
+    .index-filter__wrapper .grid__wrapper #filterToggle {
+      padding-left: 0; }
+    .index-filter__wrapper .grid__wrapper .category-filter__wrapper {
+      opacity: 0;
+      transition: opacity 450ms ease; }
+      .index-filter__wrapper .grid__wrapper .category-filter__wrapper .categories-filter-list li {
+        margin-right: 20px;
+        line-height: 17px; }
+        .index-filter__wrapper .grid__wrapper .category-filter__wrapper .categories-filter-list li > span {
+          font-size: 12.5px;
+          color: #888888; }
+      .index-filter__wrapper .grid__wrapper .category-filter__wrapper.active {
+        opacity: 1; }
+
+.index-header,
+.index-table {
+  padding: 20px;
+  border-bottom: 1px solid #000000;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 20px; }
+  .index-header h3,
+  .index-table h3 {
+    font-size: 12.5px;
+    color: #888888; }
+  .index-header .small-text,
+  .index-table .small-text {
+    font-size: 12.5px; }
+  .index-header > div,
+  .index-table > div {
+    grid-column: span 4; }
+  .index-header > div:first-of-type,
+  .index-table > div:first-of-type {
+    grid-column: 1 / span 2; }
+  .index-header > div:last-of-type,
+  .index-table > div:last-of-type {
+    grid-column: 15 / span 2; }
+
+.index-table {
+  padding-bottom: 60px; }
 
 /*--------------------------------------------------------------
 # Components
@@ -617,6 +778,14 @@ body.menu-open .menu-toggle span:last-of-type {
     color: #505050; }
     #volley-footer #backToTop:hover {
       text-decoration: underline; }
+
+button.small {
+  font-family: neue-haas-grotesk-text, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12.5px;
+  line-height: 17px;
+  color: #505050; }
 
 /*--------------------------------------------------------------
 /*--------------------------------------------------------------
