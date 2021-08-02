@@ -100,75 +100,112 @@ get_header();
 		$the_query = new WP_Query($args); ?>
 
 
+  <div class="filtered-index__wrapper">
 
-  <?php
-		while ($the_query->have_posts()) : $the_query->the_post();
+    <?php
+			while ($the_query->have_posts()) : $the_query->the_post();
 
-			$postCats = get_the_category();
-			$year = array();
-			$services = array();
-			$categories = array();
+				$postCats = get_the_category();
 
-			foreach ($postCats as $postCat) :
-			// if cat parent matches year
-			// if cat parent matches services
-			// if cat parent matches category
-			endforeach;
-		?>
 
-  <div class="index-table grid__wrapper">
-    <div>
-      <!-- Year Loop -->
-      <span class="small-text">Year</span>
-    </div>
-    <div>
-      <span class="small-text"><?php echo the_title(); ?></span>
-    </div>
-    <div>
-      <?php
-					$indexClients = get_field('project_index_client');
-					if ($indexClients) {
-						foreach ($indexClients as $indexClient) {
-							$clientName = $indexClient['client_name']; ?>
-      <span class="small-text">
-        <?php echo $clientName; ?>
-      </span>
-      <br />
-      <?php
+
+			?>
+
+    <div class="index-table filtered-index grid__wrapper staggered">
+      <div>
+        <!-- Year Loop -->
+        <?php
+
+						$year = array();
+
+						foreach ($postCats as $postCat) :
+
+							if ($postCat->category_parent == 15) :
+
+								$year[] = "<span class='small-text'>" . $postCat->cat_name . "</span>";
+
+						?>
+
+        <?php endif;
+
+						endforeach; ?>
+
+        <?php echo implode(", ", $year); ?>
+      </div>
+      <div>
+        <span class="small-text"><?php echo the_title(); ?></span>
+      </div>
+      <div>
+        <?php
+						$indexClients = get_field('project_index_client');
+						if ($indexClients) {
+							foreach ($indexClients as $indexClient) {
+								$clientName = $indexClient['client_name']; ?>
+        <span class="small-text">
+          <?php echo $clientName; ?>
+        </span>
+        <br />
+        <?php
+							}
 						}
-					}
-					?>
-    </div>
-    <div>
-      <!-- ** -->
-      <!-- Services Loop -->
-      <!-- ** -->
-      <span class="small-text">Services</span>
-      <!-- <span class="small-text"><?php echo implode(",", $postCat->cat_name); ?></span> -->
-    </div>
-    <div>
-      <!-- ** -->
-      <!-- Category Loop -->
-      <!-- ** -->
+						?>
+      </div>
+      <div>
+        <!-- ** -->
+        <!-- Services Loop -->
+        <!-- ** -->
+        <?php
 
-      <span class="small-text">Category</span>
+						$services = array();
 
+						foreach ($postCats as $postCat) :
+
+							if ($postCat->category_parent == 4) :
+
+								$services[] = "<span class='small-text'>" . $postCat->cat_name . "</span>";
+
+						?>
+
+        <?php endif;
+
+						endforeach; ?>
+
+        <?php echo implode(", ", $services); ?>
+      </div>
+      <div>
+        <!-- ** -->
+        <!-- Category Loop -->
+        <!-- ** -->
+        <?php
+
+						$categories = array();
+
+						foreach ($postCats as $postCat) :
+
+							if ($postCat->category_parent == 9) :
+
+								$categories[] = "<span class='small-text'>" . $postCat->cat_name . "</span>";
+
+						?>
+
+        <?php endif;
+
+						endforeach; ?>
+
+        <?php echo implode(", ", $categories); ?>
+      </div>
     </div>
+
+
+    <?php
+			endwhile;
+			wp_reset_postdata(); ?>
 
   </div>
-
   <?php
-
-		endwhile;
-
-		wp_reset_postdata();
-
-	else :
-
-		get_template_part('template-parts/content', 'none');
-
 	endif;
 	?>
+
 
 </main><!-- #main -->
 

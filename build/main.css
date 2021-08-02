@@ -619,7 +619,8 @@ body.page-our-services section.single-image img {
     grid-column: 15 / span 2; }
 
 .index-table {
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  opacity: 0; }
 
 /*--------------------------------------------------------------
 # Components

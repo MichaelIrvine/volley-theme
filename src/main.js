@@ -4,8 +4,10 @@ import accordion from './js/accordion';
 import hiddenImages from './js/hiddenImages';
 import teamBio from './js/teamBio';
 import toggleFilter from './js/toggleFilter';
+import staggerAnim from './js/staggerAnim';
 
 lazyLoad();
+staggerAnim();
 
 /**
  *
