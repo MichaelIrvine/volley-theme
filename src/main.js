@@ -5,6 +5,8 @@ import hiddenImages from './js/hiddenImages';
 import teamBio from './js/teamBio';
 import toggleFilter from './js/toggleFilter';
 import staggerAnim from './js/staggerAnim';
+import projectIndexImages from './js/projectIndexImages';
+import partnerReveal from './js/partnerReveal';
 
 lazyLoad();
 staggerAnim();
@@ -31,4 +33,10 @@ if (document.body.classList.contains('page-about')) {
 // Project Index
 if (document.body.classList.contains('post-type-archive-project_index')) {
   toggleFilter();
+  projectIndexImages();
+}
+
+// Partners Page
+if (document.body.classList.contains('page-partners')) {
+  partnerReveal();
 }

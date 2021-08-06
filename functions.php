@@ -284,3 +284,85 @@ add_action('wp_enqueue_scripts', 'category_filter');
 
 // Require file for Ajax Filter
 require get_template_directory() . '/inc/ajax-filter/ajax-filter.php';
+
+
+// 
+// Project Index Post Search
+// 
+
+function volley_ajax_filter_search_scripts()
+{
+	wp_enqueue_script('volley_ajax_filter_search', get_template_directory_uri() . '/src/js/ajax-search.js', array(), '1.0', true);
+	wp_localize_script('ajax-filter', 'wpAjax', array('ajaxUrl' => admin_url('admin-ajax.php')));
+}
+
+// Ajax Callback
+
+add_action('wp_ajax_volley_ajax_filter_search', 'volley_ajax_filter_search_callback');
+add_action('wp_ajax_nopriv_volley_ajax_filter_search', 'volley_ajax_filter_search_callback');
+
+function my_ajax_filter_search_callback()
+{
+
+	header("Content-Type: application/json");
+
+
+	$args = array(
+		'post_type' => 'project_index',
+		'posts_per_page' => -1,
+		'post_status' => 'publish',
+		'order' => 'DSC',
+	);
+
+	if (isset($_GET['search'])) {
+		$search = sanitize_text_field($_GET['search']);
+		$search_query = new WP_Query(array(
+			'post_type' => 'project_index',
+			's' => $search
+		));
+	} else {
+		$search_query = new WP_Query($args);
+	}
+
+	if ($search_query->have_posts()) {
+
+		$result = array();
+
+		while ($search_query->have_posts()) {
+			$search_query->the_post();
+
+			$result[] = array(
+				"id" => get_the_ID(),
+				"title" => get_the_title(),
+				"content" => get_the_content(),
+				"permalink" => get_permalink(),
+			);
+		}
+		wp_reset_query();
+
+		echo json_encode($result);
+	} else {
+		// no posts found
+	}
+	wp_die();
+}
+
+
+// Shortcode: [volley_ajax_filter_search]
+function volley_ajax_filter_search_shortcode()
+{
+	volley_ajax_filter_search_scripts();
+
+	ob_start(); ?>
+
+<div id="ajax-filter-search">
+  <form action="" method="get">
+    <input type="text" name="search" id="search" value="" placeholder="Search...">
+  </form>
+</div>
+
+<?php
+	return ob_get_clean();
+}
+
+add_shortcode('volley_ajax_filter_search', 'volley_ajax_filter_search_shortcode');

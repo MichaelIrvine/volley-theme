@@ -58,6 +58,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import 'global/plugins/plugins';
 /*--------------------------------------------------------------
-# Blocks
+# Template Parts
 --------------------------------------------------------------*/
-// @import 'blocks/blocks';
+@import 'layout/template-parts/template-parts';

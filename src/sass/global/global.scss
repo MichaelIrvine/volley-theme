@@ -20,10 +20,19 @@ main {
   display: grid;
   // default layout
   grid-template-columns: 1fr 1fr;
+
+  // default gap size
+  &.gap20 {
+    gap: 20px;
+  }
 }
 
 .flex__wrapper {
   display: flex;
+}
+
+.flex__wrapper.column {
+  flex-direction: column;
 }
 
 .row-rev {
@@ -36,6 +45,30 @@ img.lazy {
   filter: blur(1px);
 }
 
+// Hero Images
+
+.hero--full {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+// Hidden Images / Hover Images
+
+.hidden-image__wrapper {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+    z-index: -1;
+  }
+
+  img.show {
+    opacity: 1;
+  }
+}
 // Accordion
 
 .accordion__button {
@@ -45,4 +78,40 @@ img.lazy {
   overflow: hidden;
   padding: 0;
   transition: max-height 450ms ease-in-out, margin 450ms ease-in-out;
+}
+
+/* Position child elements relative to this element */
+.aspect-ratio__wrapper {
+  position: relative;
+}
+
+/* Create a pseudo element that uses padding-bottom to take up space */
+.aspect-ratio__wrapper::after {
+  display: block;
+  content: '';
+  /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
+}
+
+.aspect-ratio__wrapper.__5x8::after {
+  padding-bottom: (5 / 8) * 100%;
+}
+
+/* Image is positioned absolutely relative to the parent element */
+.aspect-ratio__wrapper img {
+  /* Image should match parent box size */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Two Column Text Layout
+
+.two-col__wrapper {
+  column-count: 2;
+  column-gap: 30px;
+  padding-right: 30px;
+  column-fill: balance;
 }

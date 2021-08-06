@@ -1,41 +1,29 @@
 (function ($) {
   $(document).ready(function () {
-    const staggerEl = document.querySelectorAll('.staggered');
-    const staggerTl = gsap.timeline({ paused: true });
-
     $(document).on('click', '.category-filter-item > a', function (e) {
       e.preventDefault();
-      var data = $(this).data('category');
-
-      // Toggle Current Active class
-      // $('.category-filter-item > a').removeClass('current-active-category');
-
-      // $(this).addClass('current-active-category');
-
-      staggerEl.forEach((el) => {
-        staggerTl.fromTo(
-          el,
-          {
-            autoAlpha: 1,
-            y: 0,
-          },
-          {
-            autoAlpha: 0,
-            y: -10,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: 'power3.in',
-          },
-          '-=0.55'
-        );
-      });
+      const dataId = $(this).data('category-id');
+      const dataName = $(this).data('category-name');
+      const currentShowingCat = $('.current-active-category');
 
       $.ajax({
         url: wpAjax.ajaxUrl,
-        data: { action: 'filter', category: data },
+        data: { action: 'filter', category: dataId },
         type: 'POST',
         success: function (result) {
           $('.filtered-index__wrapper').html(result);
+          $('.index-table').animate({ opacity: '1' }, 1000);
+          currentShowingCat.text(dataName);
+          $('.categories-filter-list__wrapper').removeClass('active');
+          $('.current-active-category__wrapper').addClass('active');
+          $('#filterToggle').addClass('disabled');
+
+          // If category is empty
+          if (result < 1) {
+            $('.filtered-index__wrapper').html(
+              '<div class="empty-category"><span class="small-text">No projects for this category.</span></div>'
+            );
+          }
         },
         error: function (result) {
           $('.filtered-index__wrapper').html(result);

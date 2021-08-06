@@ -60,9 +60,11 @@ get_header();
 
             setup_postdata($post); ?>
         <li>
-          <a href="<?php the_permalink(); ?>">
-            <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?php the_title(); ?>">
-          </a>
+          <div class="aspect-ratio__wrapper __5x8">
+            <a href="<?php the_permalink(); ?>">
+              <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?php the_title(); ?>">
+            </a>
+          </div>
           <a href="<?php the_permalink(); ?>">
             <?php the_title(); ?>
           </a>

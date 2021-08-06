@@ -1,9 +1,9 @@
 const toggleFilter = () => {
   const filterToggle = document.querySelector('#filterToggle');
-  const filters = document.querySelector('.category-filter__wrapper');
+  const filterList = document.querySelector('.categories-filter-list__wrapper');
 
-  filterToggle.addEventListener('click', () => {
-    filters.classList.toggle('active');
+  filterToggle.addEventListener('click', (e) => {
+    filterList.classList.toggle('active');
   });
 };
 

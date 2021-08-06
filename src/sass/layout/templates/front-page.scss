@@ -74,10 +74,13 @@
         display: flex;
         flex-direction: column;
 
-        img {
-          width: 100%;
-          object-fit: cover;
-          margin-bottom: 12.5px;
+        > div {
+          margin-bottom: 15px;
+          img {
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 12.5px;
+          }
         }
       }
     }

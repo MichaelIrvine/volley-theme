@@ -7,6 +7,7 @@
 .index-filter__wrapper {
   padding: 20px;
   margin-bottom: 56px;
+  overflow: hidden;
 
   ul {
     padding: 0;
@@ -24,26 +25,65 @@
 
     #filterToggle {
       padding-left: 0;
+
+      &.disabled {
+        color: #888888;
+        pointer-events: none;
+      }
     }
 
     .category-filter__wrapper {
-      opacity: 0;
-      transition: opacity 450ms ease;
+      position: relative;
+      .categories-filter-list__wrapper {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 450ms ease;
 
-      .categories-filter-list {
-        li {
-          margin-right: 20px;
-          line-height: 17px;
+        .categories-filter-list {
+          li {
+            margin-right: 20px;
+            line-height: 17px;
 
-          > span {
-            font-size: 12.5px;
-            color: #888888;
+            > span {
+              font-size: 12.5px;
+              color: #888888;
+            }
           }
+        }
+
+        &.active {
+          opacity: 1;
+          pointer-events: all;
         }
       }
 
-      &.active {
-        opacity: 1;
+      .current-active-category__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 450ms ease;
+
+        > div:first-of-type {
+          span {
+            font-size: 12.5px;
+            color: #888888;
+            text-transform: capitalize;
+          }
+
+          .current-active-category {
+            color: $black;
+            text-decoration: underline;
+          }
+        }
+
+        &.active {
+          opacity: 1;
+          height: auto;
+          pointer-events: all;
+        }
       }
     }
   }
@@ -52,7 +92,8 @@
 // Project Index Headers
 
 .index-header,
-.index-table {
+.index-table,
+.empty-category {
   padding: 20px;
   border-bottom: 1px solid $black;
   grid-template-columns: repeat(16, 1fr);

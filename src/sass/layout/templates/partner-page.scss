@@ -1,0 +1,121 @@
+body.page-partners {
+  main {
+    border-bottom: 1px solid $black;
+    padding-bottom: 124px;
+  }
+  #partnerPageHero {
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    margin-bottom: 40px;
+
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 15px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  #partnerInfo {
+    .grid__wrapper {
+      margin: 0 15px;
+      > .flex__wrapper {
+        margin-right: 30px;
+
+        .partner-branding {
+          height: 75px;
+          margin-bottom: 30px;
+        }
+
+        .partner-details {
+          // Reset wysiwyg
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          p,
+          a {
+            font-size: 1rem;
+            font-weight: 400;
+            font-style: normal;
+            font-family: neue-haas-grotesk-text, sans-serif;
+            line-height: 24px;
+          }
+
+          a:hover {
+            text-decoration: underline;
+          }
+          max-width: 75%;
+        }
+      }
+    }
+  }
+}
+
+// Toggling between which Partner is showing
+
+// Partner One
+.partner-one__image {
+  opacity: 0;
+  transition: opacity 650ms ease;
+}
+
+.partner-one__info__wrapper {
+  opacity: 0.25;
+  transition: opacity 650ms ease;
+
+  a {
+    pointer-events: none;
+  }
+}
+
+main.partner-one-reveal {
+  .partner-one__image {
+    opacity: 1;
+  }
+
+  .partner-one__info__wrapper {
+    opacity: 1;
+
+    a {
+      pointer-events: all;
+    }
+  }
+}
+// Partner Two
+.partner-two__image {
+  opacity: 0;
+  transition: opacity 650ms ease;
+}
+
+.partner-two__info__wrapper {
+  opacity: 0.25;
+  transition: opacity 650ms ease;
+
+  a {
+    pointer-events: none;
+  }
+}
+
+main.partner-two-reveal {
+  .partner-two__image {
+    opacity: 1;
+  }
+
+  .partner-two__info__wrapper {
+    opacity: 1;
+
+    a {
+      pointer-events: all;
+    }
+  }
+}
