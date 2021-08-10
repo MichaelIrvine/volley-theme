@@ -62,7 +62,9 @@
 
       <div class="col-layout__wrapper">
         <div>
-          <img src="<?php echo esc_url($colImage['url']); ?>" alt="<?php echo esc_attr($colImage['alt']); ?>">
+          <a href="/partners">
+            <img src="<?php echo esc_url($colImage['url']); ?>" alt="<?php echo esc_attr($colImage['alt']); ?>">
+          </a>
         </div>
         <div>
           <?php echo $colText; ?>
@@ -75,9 +77,12 @@
             $rowText = get_sub_field('content_row_layout');
             // Row Layout Image and Text
           ?>
+
       <div class="row-layout__wrapper">
         <div>
-          <img src="<?php echo esc_url($rowImage['url']); ?>" alt="<?php echo esc_attr($rowImage['alt']); ?>">
+          <a href="/partners">
+            <img src="<?php echo esc_url($rowImage['url']); ?>" alt="<?php echo esc_attr($rowImage['alt']); ?>">
+          </a>
         </div>
         <div>
           <?php echo $rowText; ?>

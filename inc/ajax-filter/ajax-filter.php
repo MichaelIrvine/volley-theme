@@ -27,10 +27,11 @@ function filter_ajax()
 
 ?>
 
-<div class="index-table filtered-index grid__wrapper">
+<div class="index-table filtered-index grid__wrapper staggered cursor-hover">
   <div>
     <!-- Year Loop -->
     <?php
+
         $year = array();
 
         foreach ($postCats as $postCat) :
@@ -44,10 +45,11 @@ function filter_ajax()
     <?php endif;
 
         endforeach; ?>
-
+    <span class="small-text index-page-header--mobile">Year</span>
     <?php echo implode(", ", $year); ?>
   </div>
   <div>
+    <span class="small-text index-page-header--mobile">Project</span>
     <span class="small-text"><?php echo the_title(); ?></span>
   </div>
   <div>
@@ -56,6 +58,7 @@ function filter_ajax()
         if ($indexClients) {
           foreach ($indexClients as $indexClient) {
             $clientName = $indexClient['client_name']; ?>
+    <span class="small-text index-page-header--mobile">Client</span>
     <span class="small-text">
       <?php echo $clientName; ?>
     </span>
@@ -84,7 +87,7 @@ function filter_ajax()
     <?php endif;
 
         endforeach; ?>
-
+    <span class="small-text index-page-header--mobile">Services</span>
     <?php echo implode(", ", $services); ?>
   </div>
   <div>
@@ -106,10 +109,11 @@ function filter_ajax()
     <?php endif;
 
         endforeach; ?>
-
+    <span class="small-text index-page-header--mobile">Category</span>
     <?php echo implode(", ", $categories); ?>
   </div>
 </div>
+<?php echo the_post_thumbnail('preloadFull'); ?>
 
 
 <?php

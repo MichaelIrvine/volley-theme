@@ -11,7 +11,7 @@ const staggerAnim = () => {
         autoAlpha: 0,
         y: 10,
       },
-      { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.in' },
+      { autoAlpha: 1, y: 0, duration: 0.85, stagger: 0.1, ease: 'power3.in' },
       '-=0.55'
     );
   });
@@ -19,7 +19,7 @@ const staggerAnim = () => {
   if (staggerEl.length > 0) {
     setTimeout(() => {
       staggerTl.play();
-    }, 500);
+    }, 700);
   }
 };
 

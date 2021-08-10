@@ -16,25 +16,25 @@ get_header();
       <h2>Case Studies</h2>
     </div>
     <?php
-		$args = array(
-			'post_type' => 'case-studies',
-			'posts_per_page' => -1,
-			'post_status' => 'publish',
-			'order' => 'DSC',
-		);
+    $args = array(
+      'post_type' => 'case-studies',
+      'posts_per_page' => -1,
+      'post_status' => 'publish',
+      'order' => 'DSC',
+    );
 
 
-		$the_query = new WP_Query($args); ?>
+    $the_query = new WP_Query($args); ?>
 
     <div class="grid__wrapper">
 
       <?php while ($the_query->have_posts()) : $the_query->the_post();
 
-				$csSecondImage = get_field('case_study_archive_image');
+        $csSecondImage = get_field('case_study_archive_image');
 
-			?>
+      ?>
 
-      <div class="case-study-item__wrapper">
+      <div class="case-study-item__wrapper staggered">
 
         <?php if (!empty($csSecondImage)) : ?>
         <div class="image__wrapper" style="height:<?php echo $csSecondImage['height']; ?>px">
@@ -61,7 +61,7 @@ get_header();
       </div>
 
       <?php endwhile;
-			wp_reset_postdata(); ?>
+      wp_reset_postdata(); ?>
 
     </div>
   </div>

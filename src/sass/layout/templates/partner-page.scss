@@ -9,6 +9,10 @@ body.page-partners {
     min-height: 100vh;
     margin-bottom: 40px;
 
+    @media (max-width: 768px) {
+      display: none;
+    }
+
     > div {
       position: absolute;
       top: 0;
@@ -24,10 +28,22 @@ body.page-partners {
   }
 
   #partnerInfo {
+    @media (max-width: 768px) {
+      padding-top: 120px;
+    }
     .grid__wrapper {
       margin: 0 15px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
       > .flex__wrapper {
         margin-right: 30px;
+
+        @media (max-width: 768px) {
+          margin-right: 0;
+          margin-bottom: 60px;
+        }
 
         .partner-branding {
           height: 75px;
@@ -54,7 +70,22 @@ body.page-partners {
           a:hover {
             text-decoration: underline;
           }
-          max-width: 75%;
+          width: 75%;
+
+          @media (max-width: 768px) {
+            width: 100%;
+          }
+
+          .partner-image--mobile {
+            @media (min-width: 768px) {
+              display: none;
+            }
+
+            display: block;
+            width: 100%;
+            margin-bottom: 30px;
+            margin-top: 30px;
+          }
         }
       }
     }
@@ -67,11 +98,19 @@ body.page-partners {
 .partner-one__image {
   opacity: 0;
   transition: opacity 650ms ease;
+
+  @media (max-width: 768px) {
+    opacity: 1;
+  }
 }
 
 .partner-one__info__wrapper {
   opacity: 0.25;
   transition: opacity 650ms ease;
+
+  @media (max-width: 768px) {
+    opacity: 1;
+  }
 
   a {
     pointer-events: none;
@@ -88,6 +127,10 @@ main.partner-one-reveal {
 
     a {
       pointer-events: all;
+
+      @media (max-width: 768px) {
+        pointer-events: all;
+      }
     }
   }
 }
@@ -95,14 +138,26 @@ main.partner-one-reveal {
 .partner-two__image {
   opacity: 0;
   transition: opacity 650ms ease;
+
+  @media (max-width: 768px) {
+    opacity: 1;
+  }
 }
 
 .partner-two__info__wrapper {
   opacity: 0.25;
   transition: opacity 650ms ease;
 
+  @media (max-width: 768px) {
+    opacity: 1;
+  }
+
   a {
     pointer-events: none;
+
+    @media (max-width: 768px) {
+      pointer-events: all;
+    }
   }
 }
 

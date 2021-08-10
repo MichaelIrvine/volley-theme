@@ -33,8 +33,8 @@ $preloadImage = $singleImage['sizes']['preloadHalf'];
   <div>
     <?php
     if (!empty($singleImage)) : ?>
-    <img style="min-height: <?php echo $singleImage['height']; ?>px" height="<?php echo $singleImage['height']; ?>px"
-      src="<?php echo esc_url($preloadImage); ?>" data-src="<?php echo esc_url($singleImage['url']); ?>" class="lazy"
+    <img height="<?php echo $singleImage['height']; ?>px" src="<?php echo esc_url($preloadImage); ?>"
+      data-src="<?php echo esc_url($singleImage['url']); ?>" class="lazy"
       alt="<?php echo esc_attr($singleImage['alt']); ?>" />
     <?php endif; ?>
   </div>

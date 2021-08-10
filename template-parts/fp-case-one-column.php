@@ -11,19 +11,19 @@ $preloadImage = $csImage['sizes']['preload'];
 ?>
 
 
-<div class="cs-one-col">
-  <div class="grid__wrapper accordion__button">
-    <div><?php echo $csTitle ?></div>
+<div class="cs-one-col staggered">
+  <div class="grid__wrapper accordion__button cursor-hover">
+    <div class="accordion__case-study-title"><?php echo $csTitle ?></div>
     <div><?php echo $csSubTitle ?></div>
     <div><?php echo $csDetails ?></div>
+
   </div>
   <div class="grid__wrapper accordion__content">
     <div>
       <?php
       if (!empty($csImage)) : ?>
-      <img style="min-height: <?php echo $csImage['height']; ?>px" height="<?php echo $csImage['height']; ?>px"
-        width="<?php echo $csImage['width']; ?>px" src="<?php echo esc_url($csImage['url']); ?>"
-        alt="<?php echo esc_attr($csImage['alt']); ?>" />
+      <img height="<?php echo $csImage['height']; ?>px" width="<?php echo $csImage['width']; ?>px"
+        src="<?php echo esc_url($csImage['url']); ?>" alt="<?php echo esc_attr($csImage['alt']); ?>" />
       <?php endif; ?>
     </div>
   </div>

@@ -15,6 +15,12 @@ body.single-case-studies {
       z-index: 10;
       padding-top: 60px;
       gap: 20px;
+
+      @media (max-width: 560px) {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+      }
+
       h1,
       p {
         color: $volleyWhite;
@@ -29,50 +35,83 @@ body.single-case-studies {
         line-height: 17px;
         margin-top: 2px;
       }
+
+      .grid__wrapper {
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+
+          div:first-of-type {
+            margin-bottom: 30px;
+          }
+        }
+      }
     }
   }
 
   #case-study-intro {
     gap: 20px;
-    margin: 0 15px 30px;
-    padding-bottom: 20px;
+    margin-bottom: 30px;
+    padding: 0 15px 20px;
     border-bottom: 1px solid $black;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
 
     > div:first-of-type {
       img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 768px) {
+        grid-row: 2;
       }
     }
 
     > div:last-of-type {
       justify-content: space-between;
 
+      > div:first-of-type {
+        @media (max-width: 900px) {
+          margin-bottom: 30px;
+        }
+      }
+
       .grid__wrapper {
         align-items: end;
 
-        .image-caption {
-          p {
-            font-size: 11px;
+        @media (max-width: 900px) {
+          grid-template-columns: 1fr;
+        }
+
+        > div:first-of-type {
+          @media (max-width: 900px) {
+            margin-bottom: 30px;
           }
         }
+
         .cs-cats__wrapper {
           ul {
             margin: 0;
-            margin-bottom: 15px;
             padding: 0;
 
             li {
               font-size: 12.5px;
             }
 
+            .parent-cat {
+              margin-bottom: 10px;
+              color: #888888;
+            }
+            .parent-cat:last-of-type {
+              margin-bottom: 0px;
+            }
+
             li > ul li {
               color: $volleyBlack;
             }
-          }
-
-          ul:last-of-type {
-            margin: 0;
           }
         }
       }
@@ -83,9 +122,18 @@ body.single-case-studies {
     .cs__content-section {
       margin: 0 15px 90px;
 
+      @media (max-width: 768px) {
+        margin-bottom: 30px;
+      }
+
       &.grid__wrapper {
         gap: 20px;
       }
     }
+  }
+
+  .image-caption {
+    font-size: 11px;
+    color: #888888;
   }
 }

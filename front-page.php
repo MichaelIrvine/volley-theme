@@ -14,7 +14,7 @@ get_header();
 
 <main id="primary" class="site-main">
   <section id="fpHeading">
-    <div class="content__wrapper">
+    <div class="content__wrapper staggered">
       <?php
       $fpHeading = get_field('front_page_heading');
       if ($fpHeading) :
@@ -47,7 +47,7 @@ get_header();
       <div>
         <h2>Latest Projects</h2>
       </div>
-      <div><a href="/">See More</a></div>
+      <div><a href="<?php echo home_url('case-studies');  ?>">See More</a></div>
     </div>
 
     <div class="content__wrapper">
@@ -57,18 +57,14 @@ get_header();
       <ul class="grid__wrapper">
         <?php foreach ($featured_projects as $post) :
 
-
             setup_postdata($post); ?>
         <li>
-          <div class="aspect-ratio__wrapper __5x8">
-            <a href="<?php the_permalink(); ?>">
-              <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?php the_title(); ?>">
-            </a>
-          </div>
           <a href="<?php the_permalink(); ?>">
-            <?php the_title(); ?>
+            <div class="aspect-ratio__wrapper __5x8">
+              <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full') ?>" alt="<?php the_title(); ?>">
+            </div>
+            <span class="small-text"><?php the_title(); ?></span>
           </a>
-
         </li>
         <?php endforeach; ?>
       </ul>

@@ -1,7 +1,34 @@
 @import './typography.scss';
 
+// Custom Cursor
+// body,
+// html,
+// a,
+// button,
+// * {
+//   cursor: none;
+
+//   @media screen and (max-width: 768px) {
+//     cursor: default;
+//   }
+// }
+
 body {
   background-color: $volleyWhite;
+}
+
+#gridMarker {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+
+  div:first-of-type {
+    border-right: 1px solid red;
+  }
 }
 
 main {
@@ -51,6 +78,7 @@ img.lazy {
   width: 100%;
   height: 100vh;
   min-height: 100vh;
+  object-fit: cover;
 }
 
 // Hidden Images / Hover Images
@@ -71,8 +99,6 @@ img.lazy {
 }
 // Accordion
 
-.accordion__button {
-}
 .accordion__content {
   max-height: 0;
   overflow: hidden;
@@ -107,11 +133,44 @@ img.lazy {
   height: 100%;
 }
 
-// Two Column Text Layout
+// Links with Arrow SVG
 
-.two-col__wrapper {
-  column-count: 2;
-  column-gap: 30px;
-  padding-right: 30px;
-  column-fill: balance;
+.link-with-arrow {
+  a {
+    svg {
+      margin-left: 5px;
+    }
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+a.link-with-arrow {
+  svg {
+    margin-left: 5px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Staggered Animations
+.staggered {
+  opacity: 0;
+}
+
+// Staggered Scroll Reveals
+
+.staggered-scroll {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 450ms ease-in;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

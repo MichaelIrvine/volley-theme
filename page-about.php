@@ -50,7 +50,7 @@ get_header();
 
     <div class="grid__wrapper">
       <div class="grid__wrapper">
-        <div><?php echo $contact['contact_info']; ?></div>
+        <div class="link-with-arrow"><?php echo $contact['contact_info']; ?></div>
         <div><?php echo $contact['contact_info_copy']; ?></div>
       </div>
       <div class="form__wrapper">
@@ -86,23 +86,20 @@ get_header();
                 <p><?php echo $role; ?></p>
               </div>
               <div>
-                <div class="bio-controls">
-                  <button data-button-id="bio-<?php echo $i ?>" class="small bio-btn bio-btn--open">
-                    <span>
-                      Read bio
-                    </span>
-                    <span>
-                      Close
-                    </span>
+                <div class="bio-controls cursor-hover">
+                  <button data-button-id="bio-<?php echo $i ?>" class="small bio-btn">
+                    <span>Read bio</span>
+                    <span>Close</span>
                   </button>
+                  <div class="button-arrow__wrapper">
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M12.5 3C12.5 2.72386 12.2761 2.5 12 2.5L7.5 2.5C7.22386 2.5 7 2.72386 7 3C7 3.27614 7.22386 3.5 7.5 3.5L11.5 3.5L11.5 7.5C11.5 7.77614 11.7239 8 12 8C12.2761 8 12.5 7.77614 12.5 7.5L12.5 3ZM3.35355 12.3536L12.3536 3.35355L11.6464 2.64645L2.64645 11.6464L3.35355 12.3536Z"
+                        fill="#505050" />
+                    </svg>
+                  </div>
                 </div>
-                <div class="button-arrow__wrapper">
-                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12.5 3C12.5 2.72386 12.2761 2.5 12 2.5L7.5 2.5C7.22386 2.5 7 2.72386 7 3C7 3.27614 7.22386 3.5 7.5 3.5L11.5 3.5L11.5 7.5C11.5 7.77614 11.7239 8 12 8C12.2761 8 12.5 7.77614 12.5 7.5L12.5 3ZM3.35355 12.3536L12.3536 3.35355L11.6464 2.64645L2.64645 11.6464L3.35355 12.3536Z"
-                      fill="#505050" />
-                  </svg>
-                </div>
+
               </div>
             </div>
 

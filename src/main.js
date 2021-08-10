@@ -7,9 +7,19 @@ import toggleFilter from './js/toggleFilter';
 import staggerAnim from './js/staggerAnim';
 import projectIndexImages from './js/projectIndexImages';
 import partnerReveal from './js/partnerReveal';
+import backToTop from './js/backToTop';
+import dropDownNav from './js/dropDownNav';
+import linkArrow from './js/linkArrow';
+import scrollReveal from './js/scrollReveal';
+import mobileMenuToggle from './js/mobileMenuToggle';
 
+mobileMenuToggle();
 lazyLoad();
+backToTop();
 staggerAnim();
+dropDownNav();
+linkArrow();
+scrollReveal();
 
 /**
  *
@@ -21,8 +31,8 @@ staggerAnim();
 
 // Front page
 if (document.body.classList.contains('home')) {
-  accordion();
   hiddenImages();
+  accordion();
 }
 // About Us
 if (document.body.classList.contains('page-about')) {
@@ -40,3 +50,44 @@ if (document.body.classList.contains('post-type-archive-project_index')) {
 if (document.body.classList.contains('page-partners')) {
   partnerReveal();
 }
+
+//
+// Custom Cursor
+//
+
+const cursor = document.querySelector('.custom-cursor');
+const hoverables = document.querySelectorAll(
+  'a, .cursor-hover, .hidden-image__wrapper a'
+);
+
+let clientX;
+let clientY;
+
+const initCursor = () => {
+  document.addEventListener('mousemove', (e) => {
+    clientX = e.clientX;
+    clientY = e.clientY;
+  });
+
+  hoverables.forEach((el) => {
+    el.addEventListener('mouseenter', hoverIn);
+    el.addEventListener('mouseleave', hoverOut);
+  });
+
+  function hoverIn() {
+    cursor.style.backgroundColor = '#000000';
+  }
+
+  function hoverOut() {
+    cursor.style.backgroundColor = 'transparent';
+  }
+
+  const render = () => {
+    cursor.style.transform = `translate(${clientX - 3}px, ${clientY - 3}px)`;
+
+    requestAnimationFrame(render);
+  };
+  requestAnimationFrame(render);
+};
+
+initCursor();

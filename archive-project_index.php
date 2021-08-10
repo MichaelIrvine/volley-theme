@@ -16,11 +16,11 @@ get_header();
   <div class="index-filter__wrapper">
     <div class="grid__wrapper">
       <div>
-        <button id="filterToggle" class="small">Filter <span><svg width="5" height="8" viewBox="0 0 5 8" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+        <button id="filterToggle" class="small cursor-hover">Filter <span><svg width="5" height="8" viewBox="0 0 5 8"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1L4 4L1 7" stroke="#888888" />
             </svg></span></button>
-        <?php echo do_shortcode('[volley_ajax_filter_search]'); ?>
+        <!-- <?php echo do_shortcode('[volley_ajax_filter_search]'); ?> -->
       </div>
       <div class="category-filter__wrapper">
         <?php
@@ -38,7 +38,7 @@ get_header();
 
 
         <div class="categories-filter-list__wrapper">
-          <ul class="categories-filter-list grid__wrapper">
+          <ul class="categories-filter-list flex__wrapper">
             <?php foreach ($parentCats as $parent) : ?>
             <li class="parent-category-item">
               <span><?php echo $parent->name; ?></span>
@@ -68,12 +68,12 @@ get_header();
           </ul>
         </div>
 
-        <div class="current-active-category__wrapper grid__wrapper">
-          <div>
+        <div class="current-active-category__wrapper flex__wrapper">
+          <div class="flex__wrapper column">
             <span>Currently Showing</span>
             <span class="current-active-category">All Categories</span>
           </div>
-          <div><a href="<?php echo home_url('project_index') ?>">View All</a></div>
+          <div class="flex__wrapper"><a href="<?php echo home_url('project_index') ?>">View All</a></div>
         </div>
       </div>
     </div>
@@ -120,7 +120,7 @@ get_header();
 
       ?>
 
-    <div class="index-table filtered-index grid__wrapper staggered">
+    <div class="index-table filtered-index grid__wrapper staggered cursor-hover">
       <div>
         <!-- Year Loop -->
         <?php
@@ -138,10 +138,11 @@ get_header();
         <?php endif;
 
             endforeach; ?>
-
+        <span class="small-text index-page-header--mobile">Year</span>
         <?php echo implode(", ", $year); ?>
       </div>
       <div>
+        <span class="small-text index-page-header--mobile">Project</span>
         <span class="small-text"><?php echo the_title(); ?></span>
       </div>
       <div>
@@ -150,6 +151,7 @@ get_header();
             if ($indexClients) {
               foreach ($indexClients as $indexClient) {
                 $clientName = $indexClient['client_name']; ?>
+        <span class="small-text index-page-header--mobile">Client</span>
         <span class="small-text">
           <?php echo $clientName; ?>
         </span>
@@ -178,7 +180,7 @@ get_header();
         <?php endif;
 
             endforeach; ?>
-
+        <span class="small-text index-page-header--mobile">Services</span>
         <?php echo implode(", ", $services); ?>
       </div>
       <div>
@@ -200,7 +202,7 @@ get_header();
         <?php endif;
 
             endforeach; ?>
-
+        <span class="small-text index-page-header--mobile">Category</span>
         <?php echo implode(", ", $categories); ?>
       </div>
     </div>

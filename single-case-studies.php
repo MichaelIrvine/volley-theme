@@ -32,10 +32,10 @@ get_header();
       <div></div>
       <!--  -->
       <div class="grid__wrapper">
-        <div>
+        <div class="staggered">
           <h1><?php echo the_field('case_study_archive_page_title'); ?></h1>
         </div>
-        <div>
+        <div class="staggered">
           <p>Example Case:</p>
           <p><?php echo the_title(); ?></p>
         </div>
@@ -58,32 +58,51 @@ get_header();
         <?php echo $csIntro['intro_copy']; ?>
       </div>
       <div class="grid__wrapper">
-        <div class="image-caption">
-          <p><?php echo $csIntro['image_caption']; ?></p>
+        <div>
+          <p class="image-caption"><?php echo $csIntro['image_caption']; ?></p>
         </div>
 
         <div class="cs-cats__wrapper">
+          <?php
+              $parentArgs = array(
+                'orderby' => 'name',
+                'order' => 'DSC',
+                'parent'   => 0,
+                'hide_empty' => 0,
+                'exclude' => array(1)
+              );
+
+              $parentCats = wp_get_post_terms($post->ID, 'category', $parentArgs);
+
+              ?>
+
           <ul>
-            <li>Parent
+            <?php foreach ($parentCats as $parent) : ?>
+            <li class="parent-cat">
+              <?php echo $parent->name; ?>
               <ul>
-                <li>Sub Cat</li>
+                <?php
+                      $subCatArgs =
+                        array(
+                          'child_of' => $parent->term_id,
+                          'order' => 'ASC',
+                          'hide_empty' => false
+                        );
+
+                      $subCategories = wp_get_post_terms($post->ID, 'category', $subCatArgs);
+
+                      foreach ($subCategories as $subCat) : ?>
+
+                <li>
+                  <?php echo $subCat->name; ?>
+                  </a>
+                </li>
+                <?php endforeach; ?>
               </ul>
             </li>
+            <?php endforeach; ?>
           </ul>
-          <ul>
-            <li>Parent
-              <ul>
-                <li>Sub Cat</li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>Parent
-              <ul>
-                <li>Sub Cat</li>
-              </ul>
-            </li>
-          </ul>
+
         </div>
       </div>
 
@@ -102,6 +121,10 @@ get_header();
 
               get_template_part('template-parts/case', 'study-two-col-image');
 
+            elseif (get_row_layout() == 'case_study_carousel') :
+
+              get_template_part('template-parts/case', 'study-carousel');
+
             elseif (get_row_layout() == 'right_aligned_text') :
 
               get_template_part('template-parts/case', 'study-right-text');
@@ -109,6 +132,18 @@ get_header();
             elseif (get_row_layout() == 'left_aligned_text') :
 
               get_template_part('template-parts/case', 'study-left-text');
+
+            elseif (get_row_layout() == 'single_column_text') :
+
+              get_template_part('template-parts/case', 'study-single-text-col');
+
+            elseif (get_row_layout() == 'left_aligned_image_and_text') :
+
+              get_template_part('template-parts/case', 'study-left-aligned-image-text');
+
+            elseif (get_row_layout() == 'image_and_text_right') :
+
+              get_template_part('template-parts/case', 'study-right-aligned-image-text');
 
             endif;
 

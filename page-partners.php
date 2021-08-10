@@ -54,29 +54,37 @@ get_header();
     <div class="grid__wrapper">
       <!-- Partner One Branding & Details -->
       <?php if (!empty($partnerDetailsOne)) : ?>
-      <div class="flex__wrapper column partner-details__wrapper partner-one__info__wrapper">
+      <div class="flex__wrapper column partner-details__wrapper partner-one__info__wrapper cursor-hover">
         <?php if (!empty($partnerBrandOne)) : ?>
         <div class="partner-branding">
           <img src="<?php echo esc_url($partnerBrandOne['url']); ?>"
             alt="<?php echo esc_attr($partnerBrandOne['alt']); ?>" />
         </div>
         <?php endif; ?>
-        <div class="partner-details">
+        <div class="partner-details link-with-arrow">
           <?php echo $partnerDetailsOne; ?>
+
+          <img width="<?php echo $imageOne['width']; ?>" height="<?php echo $imageOne['height']; ?>"
+            src="<?php echo esc_url($preloadImageOne); ?>" data-src="<?php echo esc_url($imageOne['url']); ?>"
+            class="lazy partner-image--mobile" alt="<?php echo esc_attr($imageOne['alt']); ?>" />
         </div>
       </div>
       <?php endif ?>
       <!-- Partner Two Branding & Details -->
       <?php if (!empty($partnerDetailsTwo)) : ?>
-      <div class="flex__wrapper column partner-details__wrapper partner-two__info__wrapper">
+      <div class="flex__wrapper column partner-details__wrapper partner-two__info__wrapper cursor-hover">
         <?php if (!empty($partnerBrandTwo)) : ?>
         <div class="partner-branding">
           <img src="<?php echo esc_url($partnerBrandTwo['url']); ?>"
             alt="<?php echo esc_attr($partnerBrandTwo['alt']); ?>" />
         </div>
         <?php endif; ?>
-        <div class="partner-details">
+        <div class="partner-details link-with-arrow">
           <?php echo $partnerDetailsTwo; ?>
+
+          <img width="<?php echo $imageTwo['width']; ?>" height="<?php echo $imageTwo['height']; ?>"
+            src="<?php echo esc_url($preloadImageTwo); ?>" data-src="<?php echo esc_url($imageTwo['url']); ?>"
+            class="lazy partner-image--mobile" alt="<?php echo esc_attr($imageTwo['alt']); ?>" />
         </div>
       </div>
       <?php endif ?>

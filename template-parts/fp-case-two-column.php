@@ -11,9 +11,9 @@ $preloadImage = $csImage1['sizes']['preload'];
 ?>
 
 
-<div class="cs-two-col">
-  <div class="grid__wrapper accordion__button">
-    <div><?php echo $csTitle ?></div>
+<div class="cs-two-col staggered">
+  <div class="grid__wrapper accordion__button cursor-hover">
+    <div class="accordion__case-study-title"><?php echo $csTitle ?></div>
     <div><?php echo $csSubTitle ?></div>
     <div><?php echo $csDetails ?></div>
   </div>

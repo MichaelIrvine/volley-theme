@@ -68,6 +68,7 @@ if (!function_exists('volley_setup')) :
 			array(
 				'menu-1' => esc_html__('Primary', 'volley'),
 				'menu-footer' => esc_html__('Footer', 'volley'),
+				'menu-mobile' => esc_html__('Mobile', 'volley'),
 			)
 		);
 

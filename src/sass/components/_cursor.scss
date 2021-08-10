@@ -1,0 +1,18 @@
+.custom-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: 11000;
+  background: transparent;
+  border: 1px solid $volleyBlack;
+
+  transition: background-color 400ms ease;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

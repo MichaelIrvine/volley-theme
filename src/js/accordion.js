@@ -10,7 +10,6 @@ const accordion = () => {
         activeAccordionButton.classList.toggle('active');
         activeAccordionButton.nextElementSibling.style.maxHeight = 0;
         activeAccordionButton.nextElementSibling.style.marginTop = 0;
-        a;
       }
 
       button.classList.toggle('active');

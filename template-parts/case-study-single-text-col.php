@@ -1,27 +1,27 @@
 <?php
-$imgOne = get_sub_field('image_one');
-$imgTwo = get_sub_field('image_two');
-$preloadImage = $imgOne['sizes']['preloadHalf'];
-$imageCaption = get_sub_field('image_caption');
+$singleColText = get_sub_field('case_study_single_column_text');
 ?>
 
 <div class="cs__content-section">
-  <!-- if left align -->
-  <div class="grid__wrapper gap20">
-    <div>
-      <!-- Text here -->
+  <?php if (get_sub_field('text_alignment') == 'Left') : ?>
+  <div class="grid__wrapper gap20 cs__single-column">
+    <div class="content__wrapper">
+      <?php echo $singleColText; ?>
     </div>
     <div>
       <!-- Spacer -->
     </div>
   </div>
-  <!-- if right align -->
-  <div class="grid__wrapper gap20">
+  <?php endif; ?>
+
+  <?php if (get_sub_field('text_alignment') == 'Right') : ?>
+  <div class="grid__wrapper gap20 cs__single-column">
     <div>
       <!-- Spacer -->
     </div>
-    <div>
-      <!-- Text here -->
+    <div class="content__wrapper">
+      <?php echo $singleColText; ?>
     </div>
   </div>
+  <?php endif; ?>
 </div>

@@ -41,9 +41,8 @@ $multiImages = get_sub_field('layout_gallery');
     <div>
       <?php foreach ($multiImages as $image) : ?>
 
-      <img style="min-height: <?php echo $image['height']; ?>px" height="<?php echo $image['height']; ?>px"
-        src="<?php echo esc_url($image['sizes']['preload']); ?>" data-src="<?php echo esc_url($image['url']); ?>"
-        class="lazy" alt="<?php echo esc_attr($image['alt']); ?>" />
+      <img height="<?php echo $image['height']; ?>px" src="<?php echo esc_url($image['sizes']['preload']); ?>"
+        data-src="<?php echo esc_url($image['url']); ?>" class="lazy" alt="<?php echo esc_attr($image['alt']); ?>" />
 
       <?php endforeach; ?>
     </div>
