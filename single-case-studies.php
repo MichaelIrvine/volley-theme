@@ -20,6 +20,7 @@ get_header();
 
     $heroImage = get_field('case_study_hero_image');
     $preloadImage = $heroImage['sizes']['preload'];
+    $darkText = get_field('dark_text_color');
 
     if (!empty($heroImage)) :
     ?>
@@ -31,7 +32,7 @@ get_header();
       <!-- Spacer -->
       <div></div>
       <!--  -->
-      <div class="grid__wrapper">
+      <div class="grid__wrapper case-study__heading__wrapper <?php if ($darkText) : ?>dark-text<?php endif; ?>">
         <div class="staggered">
           <h1><?php echo the_field('case_study_archive_page_title'); ?></h1>
         </div>

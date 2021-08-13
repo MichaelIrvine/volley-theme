@@ -77,6 +77,8 @@
     }
 
     form {
+      max-width: 650px;
+
       label {
         font-size: 12.5px;
         font-weight: 400;
@@ -100,6 +102,7 @@
         transition: border-bottom-color 600ms ease;
         border-bottom: 1px solid transparent;
         appearance: none;
+        background-color: #e7e7e7;
 
         &:focus {
           outline: none;
@@ -243,6 +246,7 @@
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
+      gap: 30px;
     }
 
     .flex__wrapper {
@@ -276,6 +280,18 @@
           }
         }
       }
+    }
+  }
+
+  a.link-with-arrow {
+    svg {
+      transition: opacity 300ms ease;
+      opacity: 0;
+    }
+  }
+  a.link-with-arrow:hover {
+    svg {
+      opacity: 1;
     }
   }
 }

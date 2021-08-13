@@ -105,7 +105,7 @@ get_header();
       'post_type' => 'project_index',
       'posts_per_page' => -1,
       'post_status' => 'publish',
-      'order' => 'DSC',
+      'order' => 'ASC',
     );
 
     $the_query = new WP_Query($args); ?>

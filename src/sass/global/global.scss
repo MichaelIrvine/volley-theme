@@ -1,17 +1,17 @@
 @import './typography.scss';
 
 // Custom Cursor
-// body,
-// html,
-// a,
-// button,
-// * {
-//   cursor: none;
+body,
+html,
+a,
+button,
+* {
+  cursor: none;
 
-//   @media screen and (max-width: 768px) {
-//     cursor: default;
-//   }
-// }
+  @media screen and (max-width: 768px) {
+    cursor: default;
+  }
+}
 
 body {
   background-color: $volleyWhite;
@@ -84,26 +84,62 @@ img.lazy {
 // Hidden Images / Hover Images
 
 .hidden-image__wrapper {
-  img {
+  > img {
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
     transition: opacity 400ms ease-in-out;
+    will-change: opacity;
     z-index: -1;
   }
 
-  img.show {
+  > img.show {
     opacity: 1;
   }
 }
+
+.has-hidden-images {
+  .hidden-image-carousel__wrapper {
+    .hidden-images__carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 400ms ease-in-out;
+      z-index: -1;
+      width: 250px;
+      min-width: 250px;
+      height: auto;
+
+      img {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+
+    .hidden-images__carousel.show {
+      opacity: 1;
+    }
+  }
+}
+
 // Accordion
+.accordion__button {
+  @media (max-width: 768px) {
+    pointer-events: none;
+  }
+}
 
 .accordion__content {
   max-height: 0;
   overflow: hidden;
   padding: 0;
-  transition: max-height 450ms ease-in-out, margin 450ms ease-in-out;
+  transition: max-height 550ms ease-in-out, margin 550ms ease-in-out;
+
+  @media (max-width: 768px) {
+    max-height: 1000px;
+  }
 }
 
 /* Position child elements relative to this element */
@@ -173,4 +209,11 @@ a.link-with-arrow {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+// Jump Link
+
+.jump-link--partner {
+  position: absolute;
+  top: 0;
 }

@@ -5,9 +5,9 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * 
  *
- * @package EQ
+ * @package Volley
  */
 
 ?>
@@ -34,7 +34,10 @@
         </p>
 
         <?php endif; ?>
-        <a href="/">Credit</a>
+        <div class="credit__wrapper cursor-hover">
+          <p>Credit</p>
+          <p>Site by Faculty</p>
+        </div>
       </div>
       <?php
       if (is_active_sidebar('footer-menu')) : ?>
@@ -62,7 +65,7 @@
 
       <div class="col-layout__wrapper">
         <div>
-          <a href="/partners">
+          <a href="/partners/#ari">
             <img src="<?php echo esc_url($colImage['url']); ?>" alt="<?php echo esc_attr($colImage['alt']); ?>">
           </a>
         </div>
@@ -80,7 +83,7 @@
 
       <div class="row-layout__wrapper">
         <div>
-          <a href="/partners">
+          <a href="/partners/#third-turn">
             <img src="<?php echo esc_url($rowImage['url']); ?>" alt="<?php echo esc_attr($rowImage['alt']); ?>">
           </a>
         </div>

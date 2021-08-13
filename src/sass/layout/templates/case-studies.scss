@@ -16,7 +16,7 @@ body.post-type-archive-case-studies {
 
       div:first-of-type {
         @media (max-width: 768px) {
-          padding-top: 30px;
+          padding-top: 0;
           margin-bottom: 60px;
         }
       }
@@ -25,6 +25,11 @@ body.post-type-archive-case-studies {
         @media (max-width: 600px) {
           grid-template-columns: 1fr;
         }
+      }
+
+      h2 {
+        position: sticky;
+        top: 100px;
       }
     }
 
@@ -46,11 +51,6 @@ body.post-type-archive-case-studies {
       > div:last-of-type {
         justify-content: space-between;
         margin-right: 30px;
-
-        // Line height adjustment for vertical alignment
-        p {
-          line-height: 28px;
-        }
       }
 
       // Image Props
@@ -79,6 +79,10 @@ body.post-type-archive-case-studies {
       @media (max-width: 768px) {
         border-bottom: 0;
       }
+    }
+
+    .case-study-item__wrapper h2 {
+      margin-right: 15px;
     }
 
     .case-study-item__wrapper:hover h2 {

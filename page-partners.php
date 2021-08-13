@@ -12,7 +12,9 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main partner-one-reveal">
+<main id="primary" class="site-main">
+  <div class="jump-link--partner" id="ari"></div>
+  <div class="jump-link--partner" id="third-turn"></div>
   <section id="partnerPageHero">
     <?php
     $partnerOne = get_field('partner_one_group');

@@ -20,6 +20,16 @@
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <link rel="stylesheet" href="https://use.typekit.net/idf8dzt.css">
 
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="<?php bloginfo('template_directory'); ?>/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="<?php bloginfo('template_directory'); ?>/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="<?php bloginfo('template_directory'); ?>/favicons/favicon-16x16.png">
+  <link rel="manifest" href="<?php bloginfo('template_directory'); ?>/favicons/site.webmanifest">
+  <link rel="mask-icon" href="<?php bloginfo('template_directory'); ?>/favicons/safari-pinned-tab.svg" color="#000000">
+  <meta name="msapplication-TileColor" content="#f0f0f0">
+
   <!-- Slick CSS -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
@@ -29,10 +39,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <!-- <div id="gridMarker" class="grid__wrapper">
-    <div></div>
-    <div></div>
-  </div> -->
   <div class="custom-cursor"></div>
   <?php wp_body_open(); ?>
   <div id="page" class="site">

@@ -6,24 +6,28 @@ body.page-partners {
   #partnerPageHero {
     width: 100%;
     position: relative;
-    min-height: 100vh;
     margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 450ms ease 500ms forwards;
 
     @media (max-width: 768px) {
       display: none;
     }
 
     > div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
       margin: 0 15px;
 
       img {
         width: 100%;
         object-fit: cover;
       }
+    }
+
+    > div:last-of-type {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
     }
   }
 
@@ -48,6 +52,11 @@ body.page-partners {
         .partner-branding {
           height: 75px;
           margin-bottom: 30px;
+
+          @media (max-width: 768px) {
+            height: auto;
+            max-height: 50px;
+          }
         }
 
         .partner-details {
@@ -172,5 +181,15 @@ main.partner-two-reveal {
     a {
       pointer-events: all;
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

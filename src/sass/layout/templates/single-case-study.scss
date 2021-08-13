@@ -46,6 +46,13 @@ body.single-case-studies {
         }
       }
     }
+
+    .case-study__heading__wrapper.dark-text {
+      h1,
+      p {
+        color: $volleyBlack;
+      }
+    }
   }
 
   #case-study-intro {

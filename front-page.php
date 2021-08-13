@@ -80,11 +80,45 @@ get_header();
       <div></div>
       <div class="content__wrapper">
         <div><?php echo the_field('front_page_contact'); ?></div>
-        <div class="hidden-image__wrapper wysiwyg__reset"><?php echo the_field('first_heading'); ?></div>
+        <div class="hidden-image-carousel__wrapper wysiwyg__reset">
+          <?php echo the_field('first_heading'); ?>
+          <?php
+
+          $images = get_field('hidden_images_gallery_1');
+
+          if ($images) : ?>
+          <div class="hidden-images__carousel">
+            <ul id="hidden-images-1-carousel" class="carousel">
+              <?php foreach ($images as $image) : ?>
+              <li>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+              </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
     <div class="content__wrapper">
-      <div class="hidden-image__wrapper wysiwyg__reset"><?php echo the_field('second_heading'); ?></div>
+      <div class="hidden-image-carousel__wrapper wysiwyg__reset">
+        <?php echo the_field('second_heading'); ?>
+        <?php
+
+        $images = get_field('hidden_images_gallery_2');
+
+        if ($images) : ?>
+        <div class="hidden-images__carousel">
+          <ul id="hidden-images-2-carousel" class="carousel">
+            <?php foreach ($images as $image) : ?>
+            <li>
+              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <?php endif; ?>
+      </div>
     </div>
   </section>
 

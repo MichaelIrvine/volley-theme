@@ -20,7 +20,7 @@ get_header();
       'post_type' => 'case-studies',
       'posts_per_page' => -1,
       'post_status' => 'publish',
-      'order' => 'DSC',
+      'order' => 'ASC',
     );
 
 

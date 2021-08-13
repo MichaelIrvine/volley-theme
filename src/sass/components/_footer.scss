@@ -42,7 +42,7 @@
       .inner__wrapper {
         display: flex;
         flex-direction: column;
-        margin-right: 1rem;
+        margin-right: 2rem;
       }
 
       #footerMenu {
@@ -138,6 +138,29 @@
       }
     }
   }
+}
+
+.credit__wrapper {
+  position: relative;
+  height: 17px;
+  margin: 2px 0 0;
+  p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 300ms ease;
+    white-space: nowrap;
+  }
+  p:last-of-type {
+    opacity: 0;
+  }
+}
+
+.credit__wrapper:hover p:first-of-type {
+  opacity: 0;
+}
+.credit__wrapper:hover p:last-of-type {
+  opacity: 1;
 }
 
 @keyframes fadeIn {

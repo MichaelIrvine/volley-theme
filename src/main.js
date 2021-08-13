@@ -12,6 +12,7 @@ import dropDownNav from './js/dropDownNav';
 import linkArrow from './js/linkArrow';
 import scrollReveal from './js/scrollReveal';
 import mobileMenuToggle from './js/mobileMenuToggle';
+import hiddenImagesV2 from './js/hiddenImagesV2';
 
 mobileMenuToggle();
 lazyLoad();
@@ -31,8 +32,8 @@ scrollReveal();
 
 // Front page
 if (document.body.classList.contains('home')) {
-  hiddenImages();
   accordion();
+  hiddenImagesV2();
 }
 // About Us
 if (document.body.classList.contains('page-about')) {
@@ -69,18 +70,18 @@ const initCursor = () => {
     clientY = e.clientY;
   });
 
+  function hoverIn() {
+    cursor.classList.add('cursor--active');
+  }
+
+  function hoverOut() {
+    cursor.classList.remove('cursor--active');
+  }
+
   hoverables.forEach((el) => {
     el.addEventListener('mouseenter', hoverIn);
     el.addEventListener('mouseleave', hoverOut);
   });
-
-  function hoverIn() {
-    cursor.style.backgroundColor = '#000000';
-  }
-
-  function hoverOut() {
-    cursor.style.backgroundColor = 'transparent';
-  }
 
   const render = () => {
     cursor.style.transform = `translate(${clientX - 3}px, ${clientY - 3}px)`;
