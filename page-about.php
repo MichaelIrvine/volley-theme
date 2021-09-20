@@ -139,7 +139,7 @@ get_header();
                 $clientName = get_sub_field('client_name');
                 $clientImage = get_sub_field('client_image');
               ?>
-            <li class="hidden-image__wrapper ">
+            <li class="hidden-image__wrapper">
               <a class="link-with-arrow"><?php echo $clientName; ?></a>
               <?php if (!empty($clientImage)) : ?>
               <img height="<?php echo $clientImage['height']; ?>px" src="<?php echo esc_url($clientImage['url']); ?>" />

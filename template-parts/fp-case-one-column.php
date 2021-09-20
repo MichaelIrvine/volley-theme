@@ -4,10 +4,8 @@ $csTitle = get_sub_field('case_study_title');
 $csSubTitle = get_sub_field('case_study_sub_title');
 $csDetails = get_sub_field('case_study_details');
 $csImage = get_sub_field('case_study_image');
+$csLink = get_sub_field('case_study_link');
 $preloadImage = $csImage['sizes']['preload'];
-
-
-// var_dump($csImage);/
 ?>
 
 
@@ -22,9 +20,11 @@ $preloadImage = $csImage['sizes']['preload'];
     <div>
       <?php
       if (!empty($csImage)) : ?>
-      <img height="<?php echo $csImage['height']; ?>px" width="<?php echo $csImage['width']; ?>px"
-        src="<?php echo esc_url($csImage['url']); ?>" alt="<?php echo esc_attr($csImage['alt']); ?>" />
-      <?php endif; ?>
+      <a href="<?php echo $csLink; ?>">
+        <img height="<?php echo $csImage['height']; ?>px" width="<?php echo $csImage['width']; ?>px"
+          src="<?php echo esc_url($csImage['url']); ?>" alt="<?php echo esc_attr($csImage['alt']); ?>" />
+        <?php endif; ?>
+      </a>
     </div>
   </div>
 </div>

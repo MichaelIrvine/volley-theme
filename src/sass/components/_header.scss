@@ -20,17 +20,22 @@
     width: 60%;
     height: 35px;
     min-width: 600px;
+    padding-left: 20px;
     padding-right: 20px;
 
     #primary-menu {
       display: flex;
-      padding-left: 20px;
       justify-content: space-between;
 
       > li {
         display: flex;
         align-items: flex-end;
         padding-bottom: 15px;
+        padding-right: 32px;
+
+        @media (min-width: 1441px) {
+          padding-right: 48px;
+        }
 
         a:hover {
           color: #252525;
@@ -132,33 +137,41 @@
   height: calc(100vh - 65px);
   background-color: #fafaf5;
   z-index: 9999;
-  display: flex;
-  align-items: flex-end;
-  padding: 0 15px 120px;
+  padding: 15px 15px 30px;
   transition: opacity 450ms ease;
   transition-delay: 300ms;
-  overflow: scroll;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     display: none;
   }
 
-  ul {
-    li {
-      a {
-        font-family: Neue Haas Grotesk Display Pro;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 24px;
-        line-height: 48px;
+  .menu-mobile-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+    overflow: scroll;
+
+    > ul {
+      width: 100%;
+
+      li {
+        a {
+          font-family: Neue Haas Grotesk Display Pro;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 48px;
+        }
       }
     }
-  }
 
-  .menu-item-has-children {
-    ul {
-      li {
-        padding-left: 30px;
+    .menu-item-has-children {
+      ul {
+        li {
+          padding-left: 30px;
+        }
       }
     }
   }

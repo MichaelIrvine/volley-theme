@@ -17,20 +17,6 @@ body {
   background-color: $volleyWhite;
 }
 
-#gridMarker {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: 999;
-
-  div:first-of-type {
-    border-right: 1px solid red;
-  }
-}
-
 main {
   min-height: 100vh;
 }
@@ -52,6 +38,11 @@ main {
   &.gap20 {
     gap: 20px;
   }
+}
+
+// 16 column grid layout
+._16x {
+  grid-template-columns: repeat(16, 1fr);
 }
 
 .flex__wrapper {
@@ -129,6 +120,16 @@ img.lazy {
   @media (max-width: 768px) {
     pointer-events: none;
   }
+
+  a {
+    pointer-events: none;
+  }
+}
+
+.accordion__button.active {
+  a {
+    pointer-events: all;
+  }
 }
 
 .accordion__content {
@@ -196,6 +197,26 @@ a.link-with-arrow {
 // Staggered Animations
 .staggered {
   opacity: 0;
+}
+
+.will-fade {
+  opacity: 0;
+}
+
+.fade-up-in {
+  animation: fadeUpIn 850ms ease forwards;
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 // Staggered Scroll Reveals

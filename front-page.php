@@ -13,13 +13,26 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-  <section id="fpHeading">
-    <div class="content__wrapper staggered">
-      <?php
-      $fpHeading = get_field('front_page_heading');
-      if ($fpHeading) :
-        echo $fpHeading;
-      endif; ?>
+  <section id="fpHeading" class="has-hidden-images">
+    <div class="content__wrapper wysiwyg__reset">
+      <div class="hidden-image-carousel__wrapper wysiwyg__reset">
+        <div class="fade-up-in will-fade">
+          <?php echo the_field('front_page_heading'); ?>
+        </div>
+        <?php
+        $images = get_field('heading_hidden_images');
+        if ($images) : ?>
+        <div class="hidden-images__carousel">
+          <ul id="hidden-images__heading-carousel" class="carousel">
+            <?php foreach ($images as $image) : ?>
+            <li>
+              <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+        <?php endif; ?>
+      </div>
     </div>
   </section>
   <section id="fpCaseStudies">

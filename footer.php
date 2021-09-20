@@ -35,8 +35,8 @@
 
         <?php endif; ?>
         <div class="credit__wrapper cursor-hover">
-          <p>Credit</p>
-          <p>Site by Faculty</p>
+          <span>Credit</span>
+          <span><a href="https://studiofaculty.com">Site by Faculty</a></span>
         </div>
       </div>
       <?php

@@ -39,15 +39,43 @@ $('.case-study-carousel').slick({
     </svg></button>`,
 });
 
-$('#hidden-images-1-carousel').slick({
-  dots: false,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  fade: true,
-  cssEase: 'linear',
-  autoplay: true,
-  autoplaySpeed: 550,
-  draggable: false,
+$(function () {
+  $('#hidden-images__heading-carousel').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 550,
+    draggable: false,
+  });
+
+  $('#hidden-images-1-carousel').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 550,
+    draggable: false,
+  });
+
+  $('#hidden-images-2-carousel').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 550,
+    draggable: false,
+  });
 });

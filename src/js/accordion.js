@@ -33,12 +33,6 @@ const accordion = () => {
       }
     });
   });
-
-  // window.addEventListener('resize', function(){
-  //   if(window.width <= 768){
-
-  //   }
-  // })
 };
 
 export default accordion;
