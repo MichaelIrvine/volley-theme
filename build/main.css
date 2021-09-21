@@ -316,6 +316,9 @@ img.lazy {
 
 .accordion__button a {
   pointer-events: none; }
+  @media (max-width: 768px) {
+    .accordion__button a {
+      pointer-events: all; } }
 
 .accordion__button.active a {
   pointer-events: all; }
@@ -327,7 +330,7 @@ img.lazy {
   transition: max-height 550ms ease-in-out, margin 550ms ease-in-out; }
   @media (max-width: 768px) {
     .accordion__content {
-      max-height: 1000px; } }
+      max-height: 1000px !important; } }
 
 /* Position child elements relative to this element */
 .aspect-ratio__wrapper {
@@ -447,38 +450,18 @@ a.link-with-arrow:hover {
   #fpCaseStudies p {
     padding-top: 4px; }
   #fpCaseStudies .cs-one-col .accordion__button {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     padding: 20px;
     padding-bottom: 56px;
-    border-top: 1px solid #000000;
-    gap: 60px; }
-    @media (max-width: 768px) {
-      #fpCaseStudies .cs-one-col .accordion__button {
-        grid-template-columns: 1fr 1fr 3fr;
-        grid-auto-rows: auto;
-        row-gap: 60px;
-        padding-bottom: 15px; } }
-    @media (max-width: 600px) {
-      #fpCaseStudies .cs-one-col .accordion__button {
-        gap: 20px; } }
-    #fpCaseStudies .cs-one-col .accordion__button div:first-of-type {
-      padding-right: 20%; }
-      @media (max-width: 768px) {
-        #fpCaseStudies .cs-one-col .accordion__button div:first-of-type {
-          grid-row: 2;
-          grid-column: 1 / -1;
-          padding-right: 0; } }
-    #fpCaseStudies .cs-one-col .accordion__button div:nth-of-type(2) {
-      grid-column: 2; }
-      @media (max-width: 768px) {
-        #fpCaseStudies .cs-one-col .accordion__button div:nth-of-type(2) {
-          grid-column: 1; } }
-    #fpCaseStudies .cs-one-col .accordion__button div:last-of-type {
-      grid-column: 4; }
-      @media (max-width: 768px) {
-        #fpCaseStudies .cs-one-col .accordion__button div:last-of-type {
-          grid-column: 2 / -1; } }
+    border-top: 1px solid #000000; }
+    #fpCaseStudies .cs-one-col .accordion__button .lg-screen__wrapper > div:first-child {
+      width: 76%; }
+      #fpCaseStudies .cs-one-col .accordion__button .lg-screen__wrapper > div:first-child > .accordion__case-study-title {
+        width: 35%;
+        padding-right: 32px; }
+      #fpCaseStudies .cs-one-col .accordion__button .lg-screen__wrapper > div:first-child > div:last-child {
+        width: 65%; }
+    #fpCaseStudies .cs-one-col .accordion__button .lg-screen__wrapper > div:last-child {
+      width: 24%; }
     @media (max-width: 910px) {
       #fpCaseStudies .cs-one-col .accordion__button br {
         display: none; } }
@@ -489,38 +472,18 @@ a.link-with-arrow:hover {
       padding-bottom: 30px;
       width: 100%; }
   #fpCaseStudies .cs-two-col .accordion__button {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     padding: 20px;
     padding-bottom: 56px;
-    border-top: 1px solid #000000;
-    gap: 60px; }
-    @media (max-width: 768px) {
-      #fpCaseStudies .cs-two-col .accordion__button {
-        grid-template-columns: 1fr 1fr 3fr;
-        grid-auto-rows: auto;
-        row-gap: 60px;
-        padding-bottom: 15px; } }
-    @media (max-width: 600px) {
-      #fpCaseStudies .cs-two-col .accordion__button {
-        gap: 20px; } }
-    #fpCaseStudies .cs-two-col .accordion__button div:first-of-type {
-      padding-right: 20%; }
-      @media (max-width: 768px) {
-        #fpCaseStudies .cs-two-col .accordion__button div:first-of-type {
-          grid-row: 2;
-          grid-column: 1 / -1;
-          padding-right: 0; } }
-    #fpCaseStudies .cs-two-col .accordion__button div:nth-of-type(2) {
-      grid-column: 2; }
-      @media (max-width: 768px) {
-        #fpCaseStudies .cs-two-col .accordion__button div:nth-of-type(2) {
-          grid-column: 1; } }
-    #fpCaseStudies .cs-two-col .accordion__button div:last-of-type {
-      grid-column: 4; }
-      @media (max-width: 768px) {
-        #fpCaseStudies .cs-two-col .accordion__button div:last-of-type {
-          grid-column: 2 / -1; } }
+    border-top: 1px solid #000000; }
+    #fpCaseStudies .cs-two-col .accordion__button .lg-screen__wrapper > div:first-child {
+      width: 76%; }
+      #fpCaseStudies .cs-two-col .accordion__button .lg-screen__wrapper > div:first-child > .accordion__case-study-title {
+        width: 35%;
+        padding-right: 32px; }
+      #fpCaseStudies .cs-two-col .accordion__button .lg-screen__wrapper > div:first-child > div:last-child {
+        width: 65%; }
+    #fpCaseStudies .cs-two-col .accordion__button .lg-screen__wrapper > div:last-child {
+      width: 24%; }
     @media (max-width: 768px) {
       #fpCaseStudies .cs-two-col .accordion__button h2 br {
         display: none; } }
@@ -538,6 +501,18 @@ a.link-with-arrow:hover {
       @media (max-width: 768px) {
         #fpCaseStudies .cs-two-col > .grid__wrapper:last-of-type img {
           margin-bottom: 15px; } }
+  @media (max-width: 650px) {
+    #fpCaseStudies .accordion__button .lg-screen__wrapper {
+      display: none; } }
+  #fpCaseStudies .accordion__button .mobile__wrapper {
+    display: block;
+    width: 60%; }
+    #fpCaseStudies .accordion__button .mobile__wrapper > div:first-child {
+      margin-bottom: 60px;
+      justify-content: space-between; }
+    @media (min-width: 650px) {
+      #fpCaseStudies .accordion__button .mobile__wrapper {
+        display: none; } }
 
 #latestProject {
   border-bottom: 1px solid #000000;

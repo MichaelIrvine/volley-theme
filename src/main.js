@@ -21,6 +21,7 @@ staggerAnim();
 dropDownNav();
 linkArrow();
 scrollReveal();
+accordion();
 
 /**
  *
@@ -32,7 +33,6 @@ scrollReveal();
 
 // Front page
 if (document.body.classList.contains('home')) {
-  accordion();
   hiddenImagesV2();
 }
 // About Us

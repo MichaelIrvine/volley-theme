@@ -1,6 +1,10 @@
 const accordion = () => {
   const accordionButton = document.querySelectorAll('.accordion__button');
 
+  if (!accordionButton) {
+    return;
+  }
+
   accordionButton.forEach((button, i) => {
     // Check for first accordion item
     // Add open styles

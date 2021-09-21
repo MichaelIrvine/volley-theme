@@ -10,10 +10,26 @@ $preloadImage = $csImage['sizes']['preload'];
 
 
 <div class="cs-one-col staggered accordion__wrapper">
-  <div class="grid__wrapper accordion__button cursor-hover">
-    <div class="accordion__case-study-title"><?php echo $csTitle ?></div>
-    <div><?php echo $csSubTitle ?></div>
-    <div><?php echo $csDetails ?></div>
+  <div class="accordion__button cursor-hover">
+    <div class="lg-screen__wrapper flex__wrapper">
+      <div class="flex__wrapper">
+        <div class="accordion__case-study-title"><?php echo $csTitle ?></div>
+        <div><?php echo $csSubTitle ?></div>
+      </div>
+      <div>
+        <div><?php echo $csDetails ?></div>
+      </div>
+    </div>
+
+    <div class="mobile__wrapper">
+      <div class="flex__wrapper">
+        <div><?php echo $csSubTitle ?></div>
+        <div><?php echo $csDetails ?></div>
+      </div>
+      <div>
+        <div class="accordion__case-study-title"><?php echo $csTitle ?></div>
+      </div>
+    </div>
 
   </div>
   <div class="grid__wrapper accordion__content">
