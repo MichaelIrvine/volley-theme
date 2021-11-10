@@ -1,0 +1,301 @@
+@import './typography.scss';
+
+// Custom Cursor
+body,
+html,
+a,
+button,
+* {
+  cursor: none;
+
+  @media screen and (max-width: 768px) {
+    cursor: default;
+  }
+}
+
+body {
+  background-color: $volleyWhite;
+}
+
+main {
+  min-height: 100vh;
+}
+
+/* 
+*
+*
+* // Utility Classes
+*
+*
+*/
+
+.grid__wrapper {
+  display: grid;
+  // default layout
+  grid-template-columns: 1fr 1fr;
+
+  // default gap size
+  &.gap20 {
+    gap: 20px;
+  }
+}
+
+// 16 column grid layout
+._16x {
+  grid-template-columns: repeat(16, 1fr);
+}
+
+.flex__wrapper {
+  display: flex;
+}
+
+.flex__wrapper.column {
+  flex-direction: column;
+}
+
+.row-rev {
+  flex-direction: row-reverse;
+}
+
+// Content Wrapper -- generic wrapper container
+// -- add on max-w--*** to constrain max width size
+// -- Max Width Size:
+// --large: 1860px
+// --med: 1280px
+
+.content__wrapper.max-w--large {
+  width: 100%;
+  max-width: 1860px;
+  margin: 0 auto;
+}
+.content__wrapper.max-w--med {
+  width: 100%;
+  max-width: 1280px;
+
+  &.align-left {
+  }
+}
+
+// Images / Lazy Loading
+
+img.lazy {
+  filter: blur(1px);
+}
+
+// Hero Images
+
+.hero--full {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+// Hidden Images / Hover Images
+
+.hidden-image__wrapper {
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out;
+    will-change: opacity;
+    z-index: -1;
+  }
+
+  > img.show {
+    opacity: 1;
+  }
+}
+
+.has-hidden-images {
+  .hidden-image-carousel__wrapper {
+    .hidden-images__carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 400ms ease-in-out;
+      z-index: -1;
+      width: 250px;
+      min-width: 250px;
+      height: auto;
+
+      img {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+
+    .hidden-images__carousel.show {
+      opacity: 1;
+    }
+  }
+}
+
+// Accordion
+.accordion__button {
+  @media (max-width: 768px) {
+    pointer-events: none;
+  }
+
+  a {
+    pointer-events: none;
+
+    @media (max-width: 768px) {
+      pointer-events: all;
+    }
+  }
+}
+
+.accordion__button.active {
+  a {
+    pointer-events: all;
+  }
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 550ms ease-in-out, margin 550ms ease-in-out;
+
+  @media (max-width: 768px) {
+    max-height: 1000px !important;
+  }
+}
+
+/* Position child elements relative to this element */
+.aspect-ratio__wrapper {
+  position: relative;
+}
+
+/* Create a pseudo element that uses padding-bottom to take up space */
+.aspect-ratio__wrapper::after {
+  display: block;
+  content: '';
+  /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
+}
+
+.aspect-ratio__wrapper.__5x8::after {
+  padding-bottom: (5 / 8) * 100%;
+}
+
+/* Image is positioned absolutely relative to the parent element */
+.aspect-ratio__wrapper img {
+  /* Image should match parent box size */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.aspect-portrait {
+  height: 0;
+  overflow: hidden;
+  padding-top: (5 / 4) * 100%;
+  background: white;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.aspect-landscape {
+  height: 0;
+  overflow: hidden;
+  padding-top: (2 / 3) * 100%;
+  background: white;
+  position: relative;
+
+  .image__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Links with Arrow SVG
+.link-with-arrow {
+  a {
+    svg {
+      margin-left: 5px;
+    }
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+a.link-with-arrow {
+  svg {
+    margin-left: 5px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Staggered Animations
+.staggered {
+  opacity: 0;
+}
+
+.will-fade {
+  opacity: 0;
+}
+
+.fade-up-in {
+  animation: fadeUpIn 850ms ease forwards;
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Staggered Scroll Reveals
+
+.staggered-scroll {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 450ms ease-in;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Jump Link
+
+.jump-link--partner {
+  position: absolute;
+  top: 0;
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+  display: block;
+  background-color: $volleyBlack;
+}

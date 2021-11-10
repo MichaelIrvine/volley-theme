@@ -1,0 +1,246 @@
+// Styles for all Case Studies Flex Content Template Parts
+
+// Case Study Content Section
+.cs__content-section {
+  a {
+    display: flex;
+    align-items: center;
+
+    &:before {
+      display: block;
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: transparent;
+      border: 1px solid $volleyBlack;
+      border-radius: 50px;
+      margin-right: 5px;
+    }
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a:hover::before {
+    background-color: $volleyBlack;
+  }
+
+  .cs__image-caption {
+    margin-top: 10px;
+  }
+}
+
+// Two column text layout
+.cs__two-column {
+  margin-right: 15px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .two-col-heading {
+    text-transform: uppercase;
+    font-size: 12.5px;
+  }
+
+  // Two Column Text Layout
+
+  .two-col__wrapper {
+    column-count: 2;
+    column-gap: 30px;
+    padding-right: 30px;
+    column-fill: balance;
+
+    @media (max-width: 768px) {
+      column-gap: 20px;
+      padding-right: 0;
+    }
+  }
+}
+
+.cs__single-column {
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .content__wrapper {
+    width: 80%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+.cs__carousel__wrapper {
+  .case-study-carousel {
+    position: relative;
+
+    .slick-arrow:first-of-type {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      z-index: 9;
+      height: 40px;
+      background: rgba($color: #ffffff, $alpha: 0);
+      display: flex;
+      align-items: center;
+      transition: background-color 300ms ease-in-out;
+      &:hover {
+        background: rgba($color: #ffffff, $alpha: 0.3);
+      }
+
+      @media (max-width: 768px) {
+        display: none !important;
+      }
+    }
+    .slick-arrow:last-of-type {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      z-index: 9;
+      height: 40px;
+      background: rgba($color: #ffffff, $alpha: 0);
+      display: flex;
+      align-items: center;
+      transition: background-color 300ms ease-in-out;
+      &:hover {
+        background: rgba($color: #ffffff, $alpha: 0.3);
+      }
+
+      @media (max-width: 768px) {
+        display: none !important;
+      }
+    }
+
+    .slick-list {
+      height: 96vh;
+
+      .slick-slide {
+        margin: 0 8px;
+        img {
+          width: 100%;
+          min-height: 96vh;
+          max-height: 96vh;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .slick-dots {
+      li {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+.cs__full-width-image {
+  img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+      height: auto;
+    }
+  }
+}
+
+.cs__two-col-images {
+  img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+      height: auto;
+    }
+  }
+}
+
+.cs__image-text-cols {
+  margin: 6rem 0;
+
+  &.left-aligned {
+    .grid__wrapper {
+      grid-template-columns: minmax(auto, max-content) minmax(auto, 220px);
+      justify-content: start;
+    }
+    .image-col {
+      max-width: 40vw;
+      min-width: 40vw;
+      margin-right: 20px;
+      width: auto;
+
+      &.quarter-width {
+        max-width: 25vw;
+        min-width: 25vw;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        max-height: 100vh;
+      }
+    }
+
+    .text-col {
+      // reset wysiwyg
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a {
+        font-size: 11px;
+        color: #888888;
+      }
+    }
+  }
+  &.right-aligned {
+    .grid__wrapper {
+      grid-template-columns: minmax(auto, 220px) minmax(auto, max-content);
+      justify-content: end;
+    }
+    .image-col {
+      max-width: 40vw;
+      min-width: 40vw;
+      margin-left: 20px;
+
+      &.quarter-width {
+        max-width: 25vw;
+        min-width: 25vw;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        max-height: 100vh;
+      }
+    }
+
+    .text-col {
+      // reset wysiwyg
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a {
+        font-size: 11px;
+        color: #888888;
+      }
+    }
+  }
+}

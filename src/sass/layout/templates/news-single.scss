@@ -1,0 +1,23 @@
+body.single-post {
+  #news-featured-image {
+    .post-thumbnail {
+      margin: 0 15px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  #postBody {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    max-width: 750px;
+    margin: 0 auto;
+
+    .entry-header {
+      margin-bottom: 30px;
+    }
+  }
+}
